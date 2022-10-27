@@ -1,2 +1,23 @@
-<h1>Expenses#new</h1>
-<p>Find me in app/views/expenses/new.html.erb</p>
+
+<%= form_with model: @expense, url:{action: "create", controller: "expenses"}, method: :post do |f| %>
+  <%= render "devise/shared/error_messages", resource:@expense%>
+ <div class="card">
+    <div class="card-body">
+      <div class="mb-3">
+
+<%= f.label :category_id %><br />
+        <%= f.select :category_id,  options_for_select(Category.pluck(:category,:id).map { |key, value| [key.humanize, value] }), class: "form-control"%>  </div>
+    </div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <div class="mb-3">
+        <%= f.label :amount, "Amount" %>
+        <%= f.text_field :amount, placeholder: "Enter the Amount :",  class: "form-control"%>
+      </div>
+      <div class="mb-3">
+      <%= f.date_field :date %>
+      </div>
+      <%= f.submit "Submit", class: "btn btn-primary"%>
+     </div>
+  </div>
+  <%= puts  params.inspect %>
+<% end %>
