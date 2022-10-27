@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: one
+  user: one
+  amount: 1.5
+  date: MyString
+
+two:
+  category: two
+  user: two
+  amount: 1.5
+  date: MyString
