@@ -9,6 +9,14 @@ gem "rails", "~> 7.0.4"
 # add devise
 gem 'devise'
 
+# add faker
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+
+# rubocop for rspec
+gem 'rubocop-rspec', require: false
+
+gem 'rubocop', require: false
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -56,6 +64,8 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'rspec-rails', '~> 6.0.0'
+  gem 'factory_bot_rails'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
