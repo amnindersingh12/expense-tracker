@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :expenses
   has_many :category, through: :expenses
+
+  validates :first_name, :last_name, :username, presence: true
 end
